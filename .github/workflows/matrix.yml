@@ -5,9 +5,9 @@ on:
   # (optional) Run workflow when pushing on master/main
   push: {branches: "main"}
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.ref }}
+#   cancel-in-progress: true
   
 jobs:
   github-metrics:
