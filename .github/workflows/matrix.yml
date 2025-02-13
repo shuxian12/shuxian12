@@ -4,14 +4,14 @@ on:
   schedule: [{cron: "0 0 * * *"}]
   # (optional) Run workflow when pushing on master/main
   push: {branches: "main"}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
   
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    environment: 
-      name: production
-    permissions:
-      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
