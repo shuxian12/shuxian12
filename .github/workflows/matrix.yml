@@ -2,10 +2,9 @@ name: Get all latest stats SVG
 on:
   # Schedule daily updates
   schedule: [{cron: "0 0 * * *"}]
-  # (optional) Run workflow manually
-  workflow_dispatch:
   # (optional) Run workflow when pushing on master/main
-  push: {branches: ["master", "main"]}
+  push: {branches: "master"}
+  
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -17,3 +16,108 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.PROFILE }}
+          
+  iso_calender:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: iso_calender.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          # GITHUB_TOKEN is a special auto-generated token used for commits
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+
+          # Options
+          user: shuxian12
+          template: classic
+          base: ""
+          config_timezone: Asia/Taipei
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+  
+  lang:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: lang.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          # GITHUB_TOKEN is a special auto-generated token used for commits
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+
+          # Options
+          user: shuxian12
+          template: classic
+          base: ""
+          config_timezone: Asia/Taipei
+          plugin_languages: yes
+          
+  leetcode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: code.svg
+          token: NOT_NEEDED
+          # GITHUB_TOKEN is a special auto-generated token used for commits
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+
+          # Options
+          user: shuxian12
+          template: classic
+          base: ""
+          config_timezone: Asia/Taipei
+          plugin_leetcode: yes
+          plugin_leetcode_sections: solved, skills, recent
+
+  acti_comm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: acti_comm.svg
+          # You'll need to setup a personal token in your secrets.
+          token: ${{ secrets.METRICS_TOKEN }}
+          # GITHUB_TOKEN is a special auto-generated token used for commits
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+
+          # Options
+          user: shuxian12
+          template: classic
+          base: activity, community
+          config_timezone: Asia/Taipei
+
+  repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: repo.svg
+          # You'll need to setup a personal token in your secrets.
+          token: ${{ secrets.METRICS_TOKEN }}
+          # GITHUB_TOKEN is a special auto-generated token used for commits
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+
+          # Options
+          user: shuxian12
+          template: classic
+          base: repositories
+          config_timezone: Asia/Taipei
+
+  intro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: intro.svg
+          # You'll need to setup a personal token in your secrets.
+          token: ${{ secrets.METRICS_TOKEN }}
+          # GITHUB_TOKEN is a special auto-generated token used for commits
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+
+          # Options
+          user: shuxian12
+          template: classic
+          base: header
+          plugin_introduction: yes
+          config_timezone: Asia/Taipei
