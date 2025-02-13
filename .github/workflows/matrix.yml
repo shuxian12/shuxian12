@@ -23,7 +23,7 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           filename: iso_calender.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ secrets.PROFILE }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -41,7 +41,7 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           filename: lang.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ secrets.PROFILE }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -77,7 +77,7 @@ jobs:
         with:
           filename: acti_comm.svg
           # You'll need to setup a personal token in your secrets.
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ secrets.PROFILE }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -94,7 +94,7 @@ jobs:
         with:
           filename: repo.svg
           # You'll need to setup a personal token in your secrets.
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ secrets.PROFILE }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -111,7 +111,7 @@ jobs:
         with:
           filename: intro.svg
           # You'll need to setup a personal token in your secrets.
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ secrets.PROFILE }}
           # GITHUB_TOKEN is a special auto-generated token used for commits
           committer_token: ${{ secrets.GITHUB_TOKEN }}
 
