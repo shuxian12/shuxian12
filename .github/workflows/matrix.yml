@@ -19,6 +19,10 @@ jobs:
           
   iso_calender:
     runs-on: ubuntu-latest
+    environment: 
+      name: production
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
