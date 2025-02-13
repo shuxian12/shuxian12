@@ -1,5 +1,7 @@
 ## Hi there 👋
 
+![github-metrics](./github-metrics.svg)
+
 <!--
 **shuxian12/shuxian12** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
